@@ -21,7 +21,7 @@
 
   @font-face {
     font-family: "Proxima Nova";
-    src: url("/fonts/proximanova/Mark Simonson - Proxima Nova Alt Regular-webfont.woff"), format("woff");
+    src: url("/tarkam/fonts/proximanova/ProximaNovaRegular.woff"), format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -29,7 +29,7 @@
 
   @font-face {
     font-family: "Proxima Nova";
-    src: url("/fonts/proximanova/Mark Simonson - Proxima Nova Semibold-webfont.woff2"), format("woff");
+    src: url("/tarkam/fonts/proximanova/ProximaNovaBold.woff"), format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -37,7 +37,7 @@
 
  @font-face {
     font-family: "Futura";
-    src: url("/fonts/futura/Futura-Book.woff"), format("woff");
+    src: url("/tarkam/fonts/futura/Futura-Book.woff"), format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -45,7 +45,7 @@
 
   @font-face {
     font-family: "Futura";
-    src: url("/fonts/futura/Futura-Medium.woff"), format("woff");
+    src: url("/tarkam/fonts/futura/Futura-Medium.woff"), format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -63,7 +63,7 @@
   @layer base {
     * {
       box-sizing: border-box;
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "Proxima Nova";
       scroll-behavior: smooth;
     }
 
