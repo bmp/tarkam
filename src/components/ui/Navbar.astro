@@ -3,24 +3,16 @@ import { Image } from "astro:assets";
 
 const navLinks = [
   {
-    name: "About us",
-    href: "#about",
-  },
-  {
-    name: "Services",
+    name: "How",
     href: "#services",
   },
   {
-    name: "Use cases",
-    href: "#cases",
+    name: "Team",
+    href: "#team",
   },
   {
-    name: "Testimonials",
-    href: "#testimonials",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
+    name: "History",
+    href: "#history",
   },
 ];
 
@@ -64,10 +56,6 @@ import brand from "../../assets/brand.svg";
         }
       </ul>
 
-      <!-- Login -->
-      <div class="flex xl:flex-row xl:items-center px-4 xl:gap-4 flex-col">
-        <button class="btn-secondary">Request a quote</button>
-      </div>
     </div>
 
     <!-- Hamburger menu -->
@@ -128,7 +116,7 @@ import brand from "../../assets/brand.svg";
   });
 </script>
 
-<!-- 
+<!--
   Use to highlight the active link in the navigation bar
   Gotta test in dev and prod bc sometimes it doesn't work
 ---

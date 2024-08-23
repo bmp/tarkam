@@ -7,68 +7,50 @@ import c1 from "../../assets/pics/card-pic1.png";
 import c2 from "../../assets/pics/card-pic2.png";
 import c3 from "../../assets/pics/card-pic3.png";
 import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
-import c6 from "../../assets/pics/card-pic6.png";
 
 const cards = [
   {
     index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
+    titleTop: "The Library",
+    titleBottom: "A federated data repository",
     img: c1,
-    alt: "SEO",
+    alt: "Library",
     link: "https://google.com",
   },
   {
     index: 2,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
+    titleTop: "Data Cafe",
+    titleBottom: "Spark the imagination",
     img: c2,
-    alt: "SEO",
+    alt: "Cafe",
     link: "https://google.com",
   },
   {
-    index: 3,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
+    index: 2,
+    titleTop: "Forum",
+    titleBottom: "A data clinic to understand the data needs",
     img: c3,
-    alt: "SEO",
+    alt: "Forum",
     link: "https://google.com",
   },
   {
     index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
+    titleTop: "Data Stewards",
+    titleBottom: "Cadre of data specialists",
     img: c4,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
-    img: c6,
-    alt: "SEO",
+    alt: "Data Stewards",
     link: "https://google.com",
   },
 ];
 
 const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+  "Tarkam will both create the digital infrastructure and offine, community-focused spaces to improve data-driven discourse in civil society.";
 ---
 
-<Section>
+<Section id="services">
   <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Services" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+    <SectionTitle sectionTitle="How" description={description} />
+    <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-10">
       {
         cards.map((card) => (
           <ServiceCard
@@ -77,7 +59,6 @@ const description =
             titleBottom={card.titleBottom}
             img={card.img}
             alt={card.alt}
-            link={card.link}
           />
         ))
       }

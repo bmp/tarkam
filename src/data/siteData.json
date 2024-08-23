@@ -1,8 +1,8 @@
 {
-  "title": "Servicios de diseño y desarrollo de aplicaciones web",
-  "description": "Este sitio web es un portafolio de servicios de diseño y desarrollo de aplicaciones web. Aquí encontrarás información sobre los servicios que ofrecemos, los proyectos en los que hemos trabajado y cómo puedes contactarnos.",
+  "title": "Tarkam: Centre for Data-Driven Discourse",
+  "description": "What are pathways to improve data-driven discourse? How can we kindle and build imagination of possibilities and potential of data? How can we deepen data maturity? How can we plug systemic data gaps?",
   "image": {
     "src": "https://master--kreatif-software.netlify.app/og.png",
-    "alt": "Imagen del logo de Kreatif Software"
+    "alt": "Tarkam: Centre for Data-Driven Discourse"
   }
 }

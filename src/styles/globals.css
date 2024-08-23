@@ -3,38 +3,72 @@
 @tailwind utilities;
 
 @layer base {
+  /* @font-face { */
+  /*   font-family: "Grotesk"; */
+  /*   src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff"), format("woff"); */
+  /*   font-weight: normal; */
+  /*   font-style: normal; */
+  /*   font-display: swap; */
+  /* } */
+
+  /* @font-face { */
+  /*   font-family: "Grotesk"; */
+  /*   src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff"), format("woff"); */
+  /*   font-weight: 500; */
+  /*   font-style: normal; */
+  /*   font-display: swap; */
+  /* } */
+
   @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff"), format("woff");
+    font-family: "Proxima Nova";
+    src: url("/fonts/proximanova/Mark Simonson - Proxima Nova Alt Regular-webfont.woff"), format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff"), format("woff");
+    font-family: "Proxima Nova";
+    src: url("/fonts/proximanova/Mark Simonson - Proxima Nova Semibold-webfont.woff2"), format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+ @font-face {
+    font-family: "Futura";
+    src: url("/fonts/futura/Futura-Book.woff"), format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("/fonts/futura/Futura-Medium.woff"), format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   :root {
-    --green: #b9ff66;
-    --black: rgb(0, 0, 0);
-    --dark: #191a23;
-    --white: #f3f3f3;
+      --green: #4b2165;
+      --black: rgb(0, 0, 0);
+      --dark: #320052;
+      /*--dark: #191a23;*/
+      /*--white: #f3f3f3;*/
+      --white: #e9e9e9;
   }
 
   @layer base {
     * {
       box-sizing: border-box;
-      font-family: "Grotesk", sans-serif;
+      font-family: "Proxima Nova", sans-serif;
       scroll-behavior: smooth;
     }
 
     body {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     p {
@@ -94,25 +128,25 @@
       @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
     }
     .btn-primary:hover {
-      @apply bg-green text-black transform scale-105;
+      @apply bg-green text-white transform scale-105;
     }
 
     .btn-secondary {
       @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
     }
     .btn-secondary:hover {
-      @apply bg-black text-white border-green transform scale-105;
+      @apply bg-black text-white bg-green transform scale-105;
     }
 
     .btn-tertiary {
-      @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+      @apply bg-green text-white rounded-lg px-[35px] py-5 transition-all duration-200;
     }
     .btn-tertiary:hover {
       @apply bg-white text-black transform scale-105;
     }
 
     .greenhead {
-      @apply bg-green text-black rounded-[7px] px-[7px];
+      @apply bg-green text-white rounded-[7px] px-[7px];
     }
 
     .whitehead {

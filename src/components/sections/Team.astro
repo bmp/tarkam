@@ -4,74 +4,56 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+  "Meet the team with a diverse set of skills bringing Tarkam to life";
 
 import {
   default as p1,
   default as p2,
   default as p3,
   default as p4,
-  default as p5,
-  default as p6,
 } from "../../assets/pics/profile-pic.png";
 
 const team = [
   {
     pic: p1,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Anand Sahasranaman",
+    role: "Co-Founder",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Anand has a background as a practitioner in structured nance and nancial inclusion, and as an academic in mathematics and economics. He works on understanding social systems and processes through the lens of complexity science and computational models. He was a founding member of IFMR Trust (now, Dvara Group) and founding faculty at Krea University. Anand holds a PhD in Mathematics from Imperial College London, where he was a Schrodinger Scholar, and an MBA from Carnegie Mellon University.",
     link: "https://linkedin.com",
   },
   {
     pic: p2,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Bharath M. Palavalli",
+    role: "Co-Founder",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Bharath is a researcher who uses a complex adaptive systems lens in his work. He was elected to the Ashoka Fellowship in 2018 for creating tools to help dferent stakeholders collaboratively create public policy, at Fields of View, a non-profit research organisation, he co-founded. Occasionally, he teaches courses on Tools for Participation in Public Policy, Games as Research Tools, and Data in Public Policy. He maintains a list of books on Bangalore, and mails postcards with poems that seem appropriate for the times we live in.",
     link: "https://linkedin.com",
   },
   {
     pic: p3,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Rishabh Verma",
+    role: "Co-Founder",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Rishabh is a technologist with extensive experience at the intersection of civil society and technology. He has independently collaborated with numerous non-profts and philanthropic organisations to enhance their impact through use of data and technology. In his previous role, Rishabh led the data vertical at Rainmatter, India’s largest climate-focused philanthropy. Before that, he co-founded a higher education non-profit NavGurukul aimed at democratising access to tech-focused higher education for underserved communities. He’s been featured in the Forbes 30 under 30 list for his contributions.",
     link: "https://linkedin.com",
   },
   {
     pic: p4,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Sruthi Krishnan",
+    role: "Co-Founder",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p5,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p6,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analys",
+      "Sruthi is a writer and researcher. Once upon a time, she was an engineer and then moved into journalism, and worked with The Hindu. Later, she researched and designed tools for participatory planning for public policy at Fields of View, a non-profit research organisation, she co-founded. She is the co-author of the book 'We are not users: Dialogues, Diversity, and Design' published by MIT Press in 2020. Now, she writes letters from her middle ages and tries to write longer stories.",
     link: "https://linkedin.com",
   },
 ];
 ---
 
-<Section id="about">
+<Section id="team">
   <div class="mt-[140px]">
     <SectionTitle sectionTitle="Team" description={description} />
     <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 grid-rows-2 gap-10"
     >
       {
         team.map((member, index) => (
@@ -85,9 +67,5 @@ const team = [
           />
         ))
       }
-    </div>
-    <div class="flex justify-end mt-10">
-      <button class="btn-primary">See all team</button>
-    </div>
   </div>
 </Section>
