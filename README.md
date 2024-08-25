@@ -1,10 +1,8 @@
 # Tarkam Landing Page
 
-**Theme from [Landing](https://kreatif-software.netlify.app/)**
+**Theme is from [Landing](https://kreatif-software.netlify.app/), and the code is from this [repo](https://github.com/vasquez-esteban/kreativ-software)**.
 
 ## Build and run commands
-
-Para correr la aplicación en un entorno local
 
 | Commands         | Action                            |
 |:-----------------|:----------------------------------|
