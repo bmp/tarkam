@@ -1,25 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
-import Linkedin from "../../assets/linkedin.svg";
+import Facebook from "../../assets/icons8-facebook-48.png";
+import Linkedin from "../../assets/icons8-linkedin-48.png";
 import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
-import Instagram from "../../assets/twitter.svg";
-import Mastodon from "../../assets/twitter.svg";
-import Youtube from "../../assets/twitter.svg";
+import Twitter from "../../assets/icons8-twitter-48.png";
+import Instagram from "../../assets/icons8-instagram-48.png";
+import Mastodon from "../../assets/icons8-mastodon-48.png";
+import Youtube from "../../assets/icons8-youtube-48.png";
 import ShortForm from "../ui/ShortForm.astro";
 
 const logos = [
-  { name: "Facebook", src: Facebook, link: "https://facebook.com" },
-  { name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
-  { name: "Twitter", src: Twitter, link: "https://twitter.com" },
-  { name: "Instagram", src: Instagram, link: "https://instagram.com" },
-  { name: "Mastodon", src: Mastodon, link: "https://mastodon.social" },
-  { name: "Youtube", src: Youtube, link: "https://youtube.com" },
+  { name: "Facebook", src: Facebook, link: "https://facebook.com/" },
+  { name: "Linkedin", src: Linkedin, link: "https://linkedin.com/" },
+  { name: "Twitter", src: Twitter, link: "https://twitter.com/" },
+  { name: "Instagram", src: Instagram, link: "https://instagram.com/" },
+  { name: "Mastodon", src: Mastodon, link: "https://mastodon.social/" },
+  { name: "Youtube", src: Youtube, link: "https://youtube.com/" },
 ];
 
 const links = [
-  { name: "About us", href: "#services" },
+  { name: "Work", href: "#services" },
   { name: "Team", href: "#team" },
   { name: "History", href: "#testimonials" },
 ];
@@ -59,7 +59,7 @@ const links = [
                   <li>
                     <a href={logo.link} target="_blank">
                       <picture>
-                        <Image src={logo.src} alt={logo.name} />
+                        <Image src={logo.src} alt={logo.name} width="24px"/>
                       </picture>
                     </a>
                   </li>
@@ -69,39 +69,24 @@ const links = [
           </ul>
         </div>
 
-        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
-          <div
-            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
-          >
-            <h3 class="mb-5">Contact us:</h3>
-            <div class="flex flex-col justify-between gap-4">
-              <span> Email: info@tarkam.org </span>
-              <span class="lg:w-3/4">
-                India
-              </span>
-            </div>
-          </div>
-          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
-            <ShortForm />
-          </div>
-        </div>
+        <div class="flex flex-col lg:flex-row mt-[20px] mb-[20px]">
+
       </div>
 
-      <div class="h-[1px] bg-white mb-5"></div>
+      <div class="h-[1px] bg-white mb-2"></div>
       <div
-        class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
+        class="flex flex-col lg:flex-row h-2 justify-center mt-4 text-center md:justify-between md:mt-0"
       >
         <span
-          >Tarkam &#169; 2024</span
-        >&nbsp
+        >Tarkam &#169; 2024</span>
+
         <span>
-          <a
-            href="https://www.olgaskuja.design/"
-            target="_blank"
-            class="underline">Credit (Olga Skuja)</a
-          ><span> &</span> Icons from Noun Project
+          <a href="mailto:info@tarkam.org"
+            class="underline">Write to us</a>
         </span>
+         </div>
       </div>
-    </div>
+
+
   </div>
 </section>
