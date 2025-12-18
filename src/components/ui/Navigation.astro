@@ -1,0 +1,275 @@
+\---
+import { Image } from "astro:assets";
+import LogoSvg from "../../assets/favicon_hires.svg";
+
+// Navigation.astro - Hierarchical navigation with dropdown and mobile menu
+interface MenuItem {
+  label: string;
+  href: string;
+  children?: MenuItem[];
+}
+
+const menuItems: MenuItem[] = [
+  {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "Team", href: "/about/team" },
+      { label: "History", href: "/about/history" },
+      { label: "Colophon", href: "/about/colophon" },
+    ],
+  },
+  { label: "Data Stories", href: "/data-stories" },
+  { label: "Data Stewards", href: "/data-stewards" },
+  { label: "Library of Data", href: "/library" },
+  { label: "Resources", href: "/resources" },
+  { label: "Contact Us", href: "/contact" },
+];
+---
+
+<nav
+  class="bg-gradient-to-r from-purple-900 to-purple-800 border-b-2 border-purple-700 sticky top-0 z-40 shadow-lg"
+  aria-label="Main navigation"
+  role="navigation"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+<!-- Logo/Brand -->
+<div class="flex-shrink-0">
+  <a
+    href="/"
+    class="flex items-center gap-3 hover:opacity-80 transition-opacity"
+    aria-label="Tarkam home"
+  >
+    <Image
+    src={LogoSvg}
+    alt="Tarkam"
+    class="h-10 w-10"
+  />
+    <span class="text-xl" style="font-family: 'EB Garamond', serif; letter-spacing: 0.25em; color: white !important;">TARKAM</span>
+  </a>
+</div>
+
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-2 overflow-visible" id="desktop-menu" role="menubar">
+        {
+          menuItems.map((item) => (
+            <div class="relative group">
+              {item.children ? (
+                <button
+                  class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md flex items-center gap-2 font-medium text-sm"
+                  style="color: white !important;"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {item.label}
+                  <svg
+                    class="w-4 h-4 transform group-hover:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <a
+                  href={item.href}
+                  class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md font-medium text-sm inline-block"
+                  style="color: white !important;"
+                >
+
+                  {item.label}
+                </a>
+              )}
+
+              {/* Dropdown */}
+              {item.children && (
+                <div
+                  class="absolute left-0 mt-0 w-56 bg-purple-900 text-gray-900 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-purple-300 py-2"
+                  role="menu"
+                  aria-orientation="vertical"
+                >
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-4 py-3 text-sm font-medium hover:bg-purple-300 hover:text-white-900 transition-colors"
+                      style="color: white !important;"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 text-white hover:bg-purple-700 rounded-md"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+        style="color: white !important;"
+      >
+        <svg
+          id="menu-icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden bg-purple-800 border-t-2 border-purple-700"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        {
+          menuItems.map((item) => (
+            <div>
+              {item.children ? (
+                <>
+                  <button
+                    class="w-full text-left px-3 py-2 text-white hover:bg-purple-700 rounded-md flex justify-between items-center mobile-submenu-toggle font-medium"
+                    style="color: white !important;"
+                    aria-expanded="false"
+                    aria-controls={`submenu-${item.label.replace(/\s+/g, "-").toLowerCase()}`}
+                  >
+                    <span>{item.label}</span>
+                    <svg
+                      class="w-4 h-4 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    id={`submenu-${item.label.replace(/\s+/g, "-").toLowerCase()}`}
+                    class="hidden pl-4 space-y-1 bg-purple-700 rounded-md my-1"
+                  >
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class="block px-3 py-2 text-sm text-gray-100 hover:text-white hover:bg-purple-600 rounded-md"
+                        style="color: white !important;"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <a
+                  href={item.href}
+                  class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md font-medium"
+                  style="color: white !important;"
+                >
+                  {item.label}
+                </a>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const submenuToggles = document.querySelectorAll(".mobile-submenu-toggle");
+
+  mobileMenuButton?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("hidden");
+    mobileMenu?.classList.toggle("hidden");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    mobileMenuButton?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  submenuToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const submenuId = toggle.getAttribute("aria-controls");
+      const submenu = document.getElementById(submenuId);
+      const isOpen = submenu?.classList.contains("hidden");
+      submenu?.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      const chevron = toggle.querySelector("svg");
+      if (chevron) {
+        chevron.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+      }
+    });
+  });
+
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      mobileMenuButton?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
+<style is:global>
+  nav .group > div[role="menu"] {
+    animation: dropdownSlide 0.3s ease-out forwards;
+  }
+
+  @keyframes dropdownSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

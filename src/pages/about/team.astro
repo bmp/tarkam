@@ -1,0 +1,60 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+---
+
+<MainLayout title="Our Team | Tarkam" description="Meet the team behind the Centre for Data-Driven Discourse">
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 bg-gradient-to-r from-purple-900 to-purple-800">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">Our Team</h1>
+        <p class="text-xl text-gray-200">
+          Dedicated professionals driving data-driven discourse
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <p>
+            Our team brings together diverse expertise in data science, journalism,
+            policy analysis, and technology to advance the Centre's mission.
+          </p>
+
+          <h2>Team Members</h2>
+          <p>
+            Details about individual team members will be added here. Each member
+            brings unique perspectives and skills to our work.
+          </p>
+
+          <h2>Our Values</h2>
+          <ul>
+            <li>Integrity in data analysis</li>
+            <li>Transparency in our work</li>
+            <li>Collaboration across disciplines</li>
+            <li>Impact-driven research</li>
+          </ul>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="mt-12 flex gap-4">
+          <a
+            href="/about/history"
+            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-grotesk font-medium"
+          >
+            ← Our History
+          </a>
+          <a
+            href="/about/colophon"
+            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-grotesk font-medium"
+          >
+            Colophon →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>

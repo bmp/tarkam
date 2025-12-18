@@ -1,0 +1,77 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+---
+
+<MainLayout title="Colophon | Tarkam" description="Technical and design details about the Tarkam website">
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 bg-gradient-to-r from-purple-900 to-purple-800">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">Colophon</h1>
+        <p class="text-xl text-gray-200">
+          Technical details and credits for this website
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <h2>Design & Development</h2>
+          <p>
+            This website is built with modern web technologies designed for
+            performance, accessibility, and user experience.
+          </p>
+
+          <h2>Technology Stack</h2>
+          <ul>
+            <li><strong>Framework:</strong> Astro - Static site generation</li>
+            <li><strong>Styling:</strong> Tailwind CSS - Utility-first CSS</li>
+            <li><strong>Animation:</strong> Lenis - Smooth scrolling</li>
+            <li><strong>Sliders:</strong> Swiper - Touch-friendly carousels</li>
+            <li><strong>Language:</strong> TypeScript - Type-safe JavaScript</li>
+          </ul>
+
+          <h2>Performance</h2>
+          <ul>
+            <li>Optimized images (WebP, AVIF formats)</li>
+            <li>Fast initial page loads</li>
+            <li>Accessible navigation</li>
+            <li>Mobile-first responsive design</li>
+            <li>High Lighthouse scores</li>
+          </ul>
+
+          <h2>Accessibility</h2>
+          <p>
+            This site is built to WCAG 2.1 AA standards, ensuring it's usable
+            for everyone, including those using assistive technologies.
+          </p>
+
+          <h2>Credits</h2>
+          <p>
+            Built for the Centre for Data-Driven Discourse (Tarkam) with
+            attention to performance, accessibility, and user experience.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="mt-12 flex gap-4">
+          <a
+            href="/about/history"
+            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-grotesk font-medium"
+          >
+            ← Our History
+          </a>
+          <a
+            href="/about/team"
+            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-grotesk font-medium"
+          >
+            Our Team →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
