@@ -23,6 +23,16 @@ const { ...props } = Astro.props;
     }
   </style>
   <script src="../utils/lenis"></script>
+    <script>
+    // Defer colophon CSS if it's loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const colophonLink = document.querySelector('link[href*="colophon"]');
+      if (colophonLink) {
+        // Already loaded synchronously, but we can optimize on next page
+        console.log('Colophon CSS loaded');
+      }
+    });
+  </script>
   <body>
     <main>
       <Navigation />

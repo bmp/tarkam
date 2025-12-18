@@ -27,5 +27,36 @@ const { title, description, image, frontmatter, robots } = Astro.props;
     {robots}
   />
 
+<!-- Meta description -->
+<meta name="description" content="Tarkam - Centre for Data-Driven Discourse. Working with civil-society organisations to advance data-driven practices and deepen data maturity across sectors.">
+<meta name="theme-color" content="#6B21A8">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://tarkam.org">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tarkam - Centre for Data-Driven Discourse">
+<meta property="og:description" content="Working with civil-society organisations to advance data-driven practices.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tarkam.org">
+<meta property="og:image" content="https://tarkam.org/og.png">
+
+  <!-- Preload fonts to reduce layout shift -->
+  <link
+    rel="preload"
+    href="/fonts/proximanova/ProximaNovaBold.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/proximanova/ProximaNovaRegular.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+
   <!-- Preconnect fonts, images... -->
 </head>

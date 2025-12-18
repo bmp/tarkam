@@ -39,11 +39,10 @@ const menuItems: MenuItem[] = [
   <a
     href="/"
     class="flex items-center gap-3 hover:opacity-80 transition-opacity"
-    aria-label="Tarkam home"
   >
     <Image
     src={LogoSvg}
-    alt="Tarkam"
+    alt="Tarkam home"
     class="h-10 w-10"
   />
     <span class="text-xl" style="font-family: 'EB Garamond', serif; letter-spacing: 0.25em; color: white !important;">TARKAM</span>
@@ -55,12 +54,13 @@ const menuItems: MenuItem[] = [
       <div class="hidden md:flex gap-2 overflow-visible" id="desktop-menu" role="menubar">
         {
           menuItems.map((item) => (
-            <div class="relative group">
+            <div class="relative group" role="none">
               {item.children ? (
                 <button
+                  role="menuitem"
                   class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md flex items-center gap-2 font-medium text-sm"
                   style="color: white !important;"
-                  aria-haspopup="true"
+                  aria-haspopup="menu"
                   aria-expanded="false"
                 >
                   {item.label}
@@ -82,6 +82,7 @@ const menuItems: MenuItem[] = [
               ) : (
                 <a
                   href={item.href}
+                  role="menuitem"
                   class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md font-medium text-sm inline-block"
                   style="color: white !important;"
                 >
@@ -235,13 +236,15 @@ const menuItems: MenuItem[] = [
   submenuToggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const submenuId = toggle.getAttribute("aria-controls");
-      const submenu = document.getElementById(submenuId);
-      const isOpen = submenu?.classList.contains("hidden");
-      submenu?.classList.toggle("hidden");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      const chevron = toggle.querySelector("svg");
-      if (chevron) {
-        chevron.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+      if (submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const isOpen = submenu?.classList.contains("hidden");
+            submenu?.classList.toggle("hidden");
+            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            const chevron = toggle.querySelector("svg");
+            if (chevron) {
+               chevron.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+            }
       }
     });
   });
