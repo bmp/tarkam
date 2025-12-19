@@ -1,0 +1,28 @@
+---
+import Footer from "./Footer.astro";
+---
+
+<div id="deferred-footer">
+  <Footer />
+</div>
+
+<script>
+  // Ensure colophon styles are applied after idle time
+  const applyColophonStyles = () => {
+    const links = document.head.querySelectorAll('link[rel="stylesheet"]');
+    links.forEach((link) => {
+      const href = (link as any).href;
+      if (href && href.includes('colophon')) {
+        (link as any).media = 'all';
+      }
+    });
+  };
+
+  if (document.readyState === 'complete') {
+    requestIdleCallback(applyColophonStyles, { timeout: 3000 });
+  } else {
+    document.addEventListener('load', () => {
+      requestIdleCallback(applyColophonStyles, { timeout: 3000 });
+    });
+  }
+</script>

@@ -1,5 +1,5 @@
 ---
-import Footer from "../components/ui/Footer.astro";
+import FooterDeferred from "../components/ui/FooterDeferred.astro";
 import Navigation from "../components/ui/Navigation.astro";
 import MainHead from "./MainHead.astro";
 
@@ -23,21 +23,46 @@ const { ...props } = Astro.props;
     }
   </style>
   <script src="../utils/lenis"></script>
-    <script>
-    // Defer colophon CSS if it's loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const colophonLink = document.querySelector('link[href*="colophon"]');
-      if (colophonLink) {
-        // Already loaded synchronously, but we can optimize on next page
-        console.log('Colophon CSS loaded');
-      }
-    });
+
+  <!-- CRITICAL: Intercept colophon CSS immediately and defer it -->
+  <script is:inline>
+    (function() {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        link[href*="colophon"] {
+          media: print !important;
+        }
+      `;
+      document.head.prepend(style);
+
+      // Watch for colophon CSS being injected
+      const deferColophon = () => {
+        Array.from(document.head.querySelectorAll('link[rel="stylesheet"]')).forEach(link => {
+          if (link.href.includes('colophon')) {
+            link.media = 'print';
+            link.onload = link.onloadend = () => {
+              link.media = 'all';
+            };
+            requestIdleCallback(() => link.onload?.());
+          }
+        });
+      };
+
+      // Run immediately
+      deferColophon();
+
+      // Watch for mutations (Astro might inject it later)
+      new MutationObserver(deferColophon).observe(document.head, {
+        childList: true,
+      });
+    })();
   </script>
+
   <body>
     <main>
       <Navigation />
       <slot />
-      <Footer />
     </main>
+    <FooterDeferred />
   </body>
 </html>
