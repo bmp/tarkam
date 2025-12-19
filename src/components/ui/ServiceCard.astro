@@ -35,7 +35,12 @@ const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
       <Image
         src={img}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         class="h-[100px] w-auto sm:h-auto sm:w-3/4 object-cover"
+        widths={[180, 240, 320]}
+        sizes="(min-width: 1024px) 175px, 150px"
+        format="webp"
       />
     </picture>
   </div>
