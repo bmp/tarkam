@@ -1,0 +1,21 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+import Team from "../../components/sections/Team.astro";
+import Colophon from "../../components/sections/Colophon.astro";
+import "../../styles/globals.css";
+---
+
+<MainLayout title="About Us | Tarkam" description="Meet the team behind the Centre for Data-Driven Discourse">
+  <main class="min-h-screen">
+    <!-- Content Section -->
+    <section class="py-16 px-4">
+
+        <Team />
+
+        <Colophon />
+
+      </div>
+    </section>
+  </main>
+</MainLayout>

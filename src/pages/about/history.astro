@@ -1,68 +1,13 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import SectionTitle from "../../components/ui/SectionTitle.astro";
+import History from "../../components/sections/Process.astro";
 import "../../styles/globals.css";
 ---
 
 <MainLayout title="Our History | Tarkam" description="The story and journey of the Centre for Data-Driven Discourse">
-  <main class="min-h-screen bg-white">
-    <!-- Hero Section -->
-    <section class="py-20 px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-4">Our History</h1>
-        <p class="text-xl text-gray-600">
-          The journey of creating data-driven discourse in India
-        </p>
-      </div>
-    </section>
-
+  <main class="min-h-screen">
     <!-- Content Section -->
-    <section class="py-16 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="prose prose-lg max-w-none">
-          <h2>Foundation</h2>
-          <p>
-            The Centre for Data-Driven Discourse was founded with a mission to
-            improve how data is used in public discourse and policy-making.
-          </p>
-
-          <h2>Our Evolution</h2>
-          <p>
-            Over the years, we have developed programs, partnerships, and initiatives
-            to support data literacy and responsible data use across sectors.
-          </p>
-
-          <h2>Key Milestones</h2>
-          <ul>
-            <li>Founded with a vision for data-driven discourse</li>
-            <li>Launched multiple community programs</li>
-            <li>Established partnerships with organizations</li>
-            <li>Growing impact in data advocacy</li>
-          </ul>
-
-          <h2>Looking Forward</h2>
-          <p>
-            We continue to work towards a future where data is used responsibly
-            and effectively to improve lives and societies.
-          </p>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="mt-12 flex gap-4">
-          <a
-            href="/about/team"
-            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-medium"
-          >
-            ← Our Team
-          </a>
-          <a
-            href="/about/colophon"
-            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-medium"
-          >
-            Colophon →
-          </a>
-        </div>
-      </div>
-    </section>
+    <History />
   </main>
 </MainLayout>

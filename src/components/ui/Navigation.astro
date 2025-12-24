@@ -1,4 +1,4 @@
-\---
+---
 import { Image } from "astro:assets";
 import LogoSvg from "../../assets/favicon_hires.svg";
 
@@ -14,14 +14,20 @@ const menuItems: MenuItem[] = [
     label: "About Us",
     href: "/about",
     children: [
-      { label: "Team", href: "/about/team" },
+      { label: "About Us", href: "/about/about-us" },
       { label: "History", href: "/about/history" },
-      { label: "Colophon", href: "/about/colophon" },
+      { label: "Partners", href: "/about/partners" },
     ],
   },
-  { label: "Data Stories", href: "/data-stories" },
-  { label: "Data Stewards", href: "/data-stewards" },
-  { label: "Library of Data", href: "/library" },
+  {
+    label: "Work",
+    href: "/work",
+    children: [
+      { label: "Building Stories", href: "/data-stories" },
+      { label: "Building Maturity", href: "/data-stewards" },
+      { label: "Building Infrastructures", href: "/library" },
+    ],
+  },
   { label: "Resources", href: "/resources" },
   { label: "Contact Us", href: "/contact" },
 ];

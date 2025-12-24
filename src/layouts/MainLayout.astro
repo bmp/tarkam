@@ -58,8 +58,8 @@ const { ...props } = Astro.props;
     })();
   </script>
 
-  <body>
-    <main>
+  <body class="flex flex-col min-h-screen">
+    <main class="flex-1">
       <Navigation />
       <slot />
     </main>
