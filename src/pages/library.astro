@@ -1,67 +1,54 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/globals.css";
+import DataLibraryIMG from "../assets/pics/Data_Infrastructure.svg"
+import Section from "../components/sections/Section.astro";
 ---
 
-<MainLayout title="Library of Data | Tarkam" description="Curated resources and tools for data-driven work">
-  <main class="min-h-screen">
+<MainLayout title="Building Infrastructures| Tarkam" description="Deepening Data Infrastructures">
+<main class="min-h-screen">
     <!-- Hero Section -->
     <section class="py-20 px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-4">Library of Data</h1>
+        <h1 class="text-5xl font-bold mb-4">Building Infrastructure</h1>
         <p class="text-xl text-gray-600">
-          Curated resources, tools, and guides for data work
+          Creating the hard and soft infrastructure
         </p>
       </div>
     </section>
+<Section id="home">
+  <div
+    class="grid grid-cols-1 grid-template md:grid-cols-2 md:grid-rows-1 mt-[10px]"
+  >
+    <div class="flex flex-col w-full lg:w-[66.5%]">
+    </div>
+        <picture class="row-span-1 md:row-span-3">
+          <Image src={ DataLibraryIMG} alt="Data Stewards" width={672} height={589} format="webp" loading="eager" decoding="async" fetchpriority="high" class="w-full" />
+        </picture>
+    <div class="w-full lg:w-[100%]">
+      <p class="my-[35px]">
+      In order to support ease of access and use of data for civil society organisations, Tarkam is building a federated repository. The federated model will allow organisations to have control and ownership over their own data, while allowing them to share it with others. For example, if an organisation XYZ wants to share their data through the repository, their data will continue to remain at data.xyz.org, and the repository will point to their database. Such a federated database implementation allays any fears of threats to ownership, for organisations will remain custodians of their own data. Alongside data, the repository will host a bank of tools curated to suit the needs of different civil society groups and organisations. These tools will help civil society actors make sense of the data, and imagine possibilities. </p>
+      <p class="my-[35px]">
+      Key features of the repository’s design include:
+      <ul>
+      <li>Design for collaboration: From following established data standards that allow for inter-operability, to providing appropriate meta-data for ease of access and use, the repository will be designed to ease collaboration.</li>
+      <li>Design for ease of access, use, and exploration: As the repository is intended to be used by a wide variety of audiences, with varying levels of comfort and ease of interacting with data, the repository will have different features to enable ease of access, use, and exploration. For instance, the repository will have a natural language querying feature (something akin to a chatbot) for people to interact with the library, as well as intuitive visualisation layers over the database to immediately imagine possible contexts of use.</li>
+      <li>FAIR: The repository will adhere to FAIR data principles, which state that the data should be findable, accessible, interoperable and reusable.</li>
+      </ul>
+      </p>
+      <p class="my-[35px]">
+      <br />
+      </p>
+    </div>
+  </div>
 
-    <!-- Content Section -->
-    <section class="py-16 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="prose prose-lg max-w-none">
-          <p>
-            Our Library of Data contains curated resources, tools, guides, and
-            best practices for working with data responsibly and effectively.
-          </p>
 
-          <h2>Resource Categories</h2>
-          <ul>
-            <li>Data tools and platforms</li>
-            <li>Guides and tutorials</li>
-            <li>Best practices documentation</li>
-            <li>Case studies and examples</li>
-            <li>Training materials</li>
-          </ul>
-
-          <h2>Featured Resources</h2>
-          <p>
-            Browse our collection of carefully selected resources that support
-            data literacy, governance, and responsible data practices.
-          </p>
-
-          <h2>Data Standards</h2>
-          <p>
-            Guidelines and protocols for collecting, managing, and sharing data
-            across the Tarkam ecosystem.
-          </p>
-
-          <h2>Contribute</h2>
-          <p>
-            Have a resource to share? We welcome submissions that align with
-            our mission and values.
-          </p>
-        </div>
-
-        <!-- Back Link -->
-        <div class="mt-12">
-          <a
-            href="/"
-            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-medium"
-          >
-            ← Back Home
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+</Section>
+<style>
+  .grid-template {
+    grid-template-rows: auto 1fr;
+  }
+</style>
+</main>
 </MainLayout>

@@ -16,7 +16,7 @@ const menuItems: MenuItem[] = [
     children: [
       { label: "About Us", href: "/about/about-us" },
       { label: "History", href: "/about/history" },
-      { label: "Partners", href: "/about/partners" },
+      // { label: "Partners", href: "/about/partners" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const menuItems: MenuItem[] = [
 ---
 
 <nav
-  class="bg-gradient-to-r from-purple-900 to-purple-800 border-b-2 border-purple-700 sticky top-0 z-40 shadow-lg"
+  class="bg-dark sticky top-0 z-40 shadow-lg"
   aria-label="Main navigation"
   role="navigation"
 >
@@ -64,7 +64,7 @@ const menuItems: MenuItem[] = [
               {item.children ? (
                 <button
                   role="menuitem"
-                  class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md flex items-center gap-2 font-medium text-sm"
+                  class="px-4 py-2 text-white hover:bg-green hover:text-white transition-all rounded-md flex items-center gap-2 font-medium text-sm"
                   style="color: white !important;"
                   aria-haspopup="menu"
                   aria-expanded="false"
@@ -89,7 +89,7 @@ const menuItems: MenuItem[] = [
                 <a
                   href={item.href}
                   role="menuitem"
-                  class="px-4 py-2 text-white hover:bg-purple-700 hover:text-white transition-all rounded-md font-medium text-sm inline-block"
+                  class="px-4 py-2 text-white hover:bg-dark hover:text-white transition-all rounded-md font-medium text-sm inline-block"
                   style="color: white !important;"
                 >
 
@@ -100,14 +100,14 @@ const menuItems: MenuItem[] = [
               {/* Dropdown */}
               {item.children && (
                 <div
-                  class="absolute left-0 mt-0 w-56 bg-purple-900 text-gray-900 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-purple-300 py-2"
+                  class="absolute left-0 mt-0 w-56 bg-dark text-gray-900 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-purple-300 py-2"
                   role="menu"
                   aria-orientation="vertical"
                 >
                   {item.children.map((child) => (
                     <a
                       href={child.href}
-                      class="block px-4 py-3 text-sm font-medium hover:bg-purple-300 hover:text-white-900 transition-colors"
+                      class="block px-4 py-3 text-sm font-medium hover:bg-green hover:text-white-900 transition-colors"
                       style="color: white !important;"
                     >
                       {child.label}

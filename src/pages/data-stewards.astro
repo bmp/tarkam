@@ -1,67 +1,50 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/globals.css";
+import DataMaturityIMG from "../assets/pics/Data_Maturity.svg"
+import Section from "../components/sections/Section.astro";
 ---
 
-<MainLayout title="Data Stewards | Tarkam" description="Professionals dedicated to responsible data governance">
-  <main class="min-h-screen">
+<MainLayout title="Data Stewards | Tarkam" description="Deepening Data Maturity">
+<main class="min-h-screen">
     <!-- Hero Section -->
     <section class="py-20 px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-4">Data Stewards Programme</h1>
+        <h1 class="text-5xl font-bold mb-4">Building Maturity</h1>
         <p class="text-xl text-gray-600">
-          Developing leaders in responsible data governance
+          Helping improve the data maturity of organisations
         </p>
       </div>
     </section>
+<Section id="home">
+  <div
+    class="grid grid-cols-1 grid-template md:grid-cols-2 md:grid-rows-1 mt-[10px]"
+  >
+    <div class="flex flex-col w-full lg:w-[66.5%]">
 
-    <!-- Content Section -->
-    <section class="py-16 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="prose prose-lg max-w-none">
-          <p>
-            Our Data Stewards Programme is dedicated to embedding data stewardship
-            across sectors and organizations.
-          </p>
+    </div>
+        <picture class="row-span-1 md:row-span-3">
+          <Image src={DataMaturityIMG} alt="Data Stewards" width={672} height={589} format="webp" loading="eager" decoding="async" fetchpriority="high" class="w-full" />
+        </picture>
+    <div class="w-full lg:w-[100%]">
+      <p class="my-[35px]">
+      When it comes to civil society organisations, there is no one-size-fits all. Different organisations have varying levels of data maturity. In addition, there is no linear path toward data maturity; it depends on the needs, focus, and interest of the organisation. Therefore, what CSOs need is a space that can help them assess and understand their data maturity; provide appropriate and timely support to address their data needs and challenges; and based on their interest, provide various capacity building modules. Given that Tarkam is a space that is sensitive to the needs of civil society and has expertise in data, it will act as a catalyst for deepen data maturity of CSOs. </p>
+      <p class="my-[35px]">
+      A critical challenge in the way of deepening data maturity of CSOs is that of improving data interoperability. Tarkam will consistently develop resources such as protocols, standards, playbooks, position papers to improve interoperability of data across domains and civil society actors.
+      </p>
+      <p class="my-[35px]">
+      In order to strengthen the capacity of civil society organisations, under the <b>Data Stewards Programme</b> at Tarkam, we will create a large network of Data Stewards, who understand both data, and the needs of civil society, who will be embedded with different partnering civil society organisations. The Data Stewards will work with the organisation to improve their data capabilities, as well as be part of an active network to address systemic needs and gaps.
+      </p>
+    </div>
+  </div>
 
-          <h2>About the Programme</h2>
-          <p>
-            Data stewards are embedded in civil society organizations (CSOs) to
-            advance responsible data practices and improve data governance.
-          </p>
 
-          <h2>Key Areas</h2>
-          <ul>
-            <li>Data governance frameworks</li>
-            <li>Responsible data practices</li>
-            <li>Data literacy training</li>
-            <li>Organizational capacity building</li>
-            <li>Data ethics and privacy</li>
-          </ul>
-
-          <h2>Programme Impact</h2>
-          <p>
-            Through this programme, we help organizations implement better data
-            practices that benefit their communities and stakeholders.
-          </p>
-
-          <h2>Get Involved</h2>
-          <p>
-            Interested in becoming a Data Steward? Contact us to learn more about
-            opportunities to join our network of practitioners.
-          </p>
-        </div>
-
-        <!-- Back Link -->
-        <div class="mt-12">
-          <a
-            href="/"
-            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-medium"
-          >
-            ← Back Home
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+</Section>
+<style>
+  .grid-template {
+    grid-template-rows: auto 1fr;
+  }
+</style>
+</main>
 </MainLayout>

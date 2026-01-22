@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/globals.css";
+import ResourcesIMG from "../assets/pics/Zenodo_Tarkam.png"
+import Section from "../components/sections/Section.astro";
 ---
 
 <MainLayout title="Resources | Tarkam" description="Tools, guides, and information for data-driven work">
@@ -15,50 +18,33 @@ import "../styles/globals.css";
       </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="py-16 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="prose prose-lg max-w-none">
-          <p>
-            Explore our comprehensive collection of resources designed to support
-            data practitioners, organizations, and communities.
-          </p>
+<Section id="home">
+  <div
+    class="grid grid-cols-1 grid-template md:grid-cols-2 md:grid-rows-1 mt-[10px]"
+  >
+    <div class="flex flex-col w-full lg:w-[66.5%]">
+    </div>
+        <picture class="row-span-1 md:row-span-3 max-w-md">
+          <Image src={ResourcesIMG} alt="Zenodo Screenshot" width={672} height={589} format="webp" loading="eager" decoding="async" fetchpriority="high" class="w-full h-auto object-cover" />
+        </picture>
+    <div class="w-full lg:w-[66.5%]">
+      <p class="my-[35px]">
+      Tarkam's resources will be available through the <a href="https://zenodo.org/communities/tarkam/"
+      class="link-subtle"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Zenodo Tarkam community page (opens in new tab)">
+  Zenodo
+</a> platform.
+      </p>
+    </div>
+  </div>
+</Section>
+<style>
+  .grid-template {
+    grid-template-rows: auto 1fr;
+  }
+</style>
 
-          <h2>Resource Types</h2>
-          <ul>
-            <li>Educational materials and courses</li>
-            <li>Technical tools and software</li>
-            <li>Policy documents and guidelines</li>
-            <li>Research papers and reports</li>
-            <li>Community forums and networks</li>
-          </ul>
-
-          <h2>Popular Topics</h2>
-          <ul>
-            <li>Data Literacy</li>
-            <li>Data Privacy and Security</li>
-            <li>Data Visualization</li>
-            <li>Data Ethics</li>
-            <li>Data Management</li>
-          </ul>
-
-          <h2>How to Use These Resources</h2>
-          <p>
-            Browse by category, search by topic, or explore recommended pathways
-            based on your interests and experience level.
-          </p>
-        </div>
-
-        <!-- Back Link -->
-        <div class="mt-12">
-          <a
-            href="/"
-            class="px-6 py-2 bg-purple-900 text-white rounded-md hover:bg-purple-800 transition font-medium"
-          >
-            ← Back Home
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 </MainLayout>

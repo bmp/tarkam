@@ -14,27 +14,27 @@ const logos = [
 ];
 
 const links = [
-  { name: "Partners", href: "/about/partners" },
-  { name: "Team", href: "/about/about-us" },
-  { name: "Resources", href: "/resources" },
+  // { name: "Partners", href: "/about/partners" },
+  // { name: "Team", href: "/about/about-us" },
+  // { name: "Resources", href: "/resources" },
 ];
 ---
 
 <section class="sm:px-5">
   <div class="w-full max-w-[1240px] mx-auto">
     <div
-      class="px-[15px] bg-dark text-white py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
+      class="px-[15px] bg-dark text-white py-[35px] lg:px-[60px] sm:rounded-t-[45px]"
     >
       <div>
         <div
-          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
+          class="flex flex-col lg:flex-row gap-2 items-center justify-between"
         >
           <picture>
             <a href="#home">
               <Image src={Logo} alt="Logo for Tarkam" />
             </a>
           </picture>
-          <ul class="flex flex-col sm:flex-row gap-5">
+          <ul class="flex flex-col sm:flex-row gap-5 !list-none">
             {
               links.map((link) => {
                 return (
@@ -47,7 +47,7 @@ const links = [
               })
             }
           </ul>
-          <ul class="flex gap-5">
+          <ul class="flex gap-5 !list-none">
             {
               logos.map((logo) => {
                 return (
@@ -63,23 +63,18 @@ const links = [
             }
           </ul>
         </div>
-
         <div class="flex flex-col lg:flex-row mt-[20px] mb-[20px]">
-
       </div>
-
       <div class="h-[1px] bg-white mb-2"></div>
       <div
         class="flex flex-col lg:flex-row h-2 justify-center mt-4 text-center md:justify-between md:mt-0"
       >
-        <span class="text-sm" style="font-family: 'EB Garamond', serif;">© Copyright 2025 Tarkam</span>
+        <span class="text-sm" style="font-family: 'EB Garamond', serif;">© Copyright 2026 Tarkam</span>
         <span>
           <a href="mailto:info@tarkam.org"
-            class="underline text-sm font-grotesk">Write to us</a>
+            class="underline text-sm" style="font-family: 'EB Garamond', serif;">Write to us</a>
         </span>
          </div>
       </div>
-
-
   </div>
 </section>

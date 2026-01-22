@@ -121,6 +121,29 @@
         font-size: 1.125rem;
       }
     }
+
+      ul {
+          list-style-type: disc;
+          padding-left: 1.5rem;
+          margin: 1rem 0;
+      }
+
+      li {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 640px) {
+          ul {
+              padding-left: 1.25rem;
+          }
+
+          li {
+              font-size: 1rem;
+              line-height: 1.5;
+          }
+      }
   }
 
   @layer components {
@@ -156,6 +179,32 @@
     .blackhead {
       @apply bg-black text-white rounded-[7px] px-[7px];
     }
+    /* Link styles - text color only */
+  .link {
+    @apply text-dark hover:text-green underline decoration-1 underline-offset-4
+           transition-colors duration-200 font-medium;
+  }
+
+  .link-white {
+    @apply text-white hover:text-green underline decoration-1 underline-offset-4
+           transition-colors duration-200 font-medium;
+  }
+
+  .link-black {
+    @apply text-black hover:text-green underline decoration-1 underline-offset-4
+           transition-colors duration-200 font-medium;
+  }
+
+  .link-subtle {
+    @apply text-green hover:text-dark underline decoration-1 underline-offset-2
+           transition-colors duration-200;
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply text-white hover:text-green no-underline hover:underline
+           transition-colors duration-200 font-medium;
+  }
   }
 }
 
