@@ -1,13 +1,33 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../../layouts/MainLayout.astro";
 import SectionTitle from "../../components/ui/SectionTitle.astro";
 import TarkamHistory from "../../components/sections/Process.astro";
+import Section from "../../components/sections/Section.astro";
 import "../../styles/globals.css";
+import IIITBIMG from "../../assets/pics/IIITB_logo.png"
 ---
 
 <MainLayout title="Our History | Tarkam" description="The story and journey of the Centre for Data-Driven Discourse">
   <main class="min-h-screen">
+  <Section id="history">
+  <div class="mt-[80px]">
+  <SectionTitle
+  sectionTitle="History"
+  />
+  </div>
+  </Section>
     <!-- Content Section -->
-    <TarkamHistory />
+     <section id="description" class="px-24">
+   Tarkam: Centre for Data-Driven Discourse was setup as a research lab in December, 2024 within <a href="https://www.iiitb.ac.in/"  class="link-subtle"
+        target="_blank"
+        rel="noopener noreferrer" aria-label="International Institute of Information Technology, Bangalore website (opens in new tab)">International Institute of Information Technology, Bangalore</a>. We wish to acknowledge and place in record the history of how the idea of Tarkam came to be and thank those who helped shape it thus far. The idea for Tarkam as a federated database was born in Fields of View in 2019 as a response to a call for initiatives for 'Data for Justice'. The idea found a new lease of life when Rishabh Verma, then at Rainmatter Foundation approached Fields of View in 2022 to join an initiative to build a Knowledge Commons, and Fields of View proposed the Public Library of Data as a way to bring together data of, by, and for CSOs. The initial ideas were captured in a note prepared by Fields of View in August 2022. The first meeting around the Public Library of Data was anchored at Fields of View on October 6, 2022, with CSEI at Atree, FES, and Rainmatter Foundation to explore possibilities. During the meeting, organised and designed by Fields of View, a blueprint for the idea and governance was discussed. After further discussions with different advisors and mentors, the idea of Tarkam took shape.
+<br />
+<br />
+ <a href="https://www.iiitb.ac.in/"  class="link-none"
+        target="_blank"
+        rel="noopener noreferrer" aria-label="International Institute of Information Technology, Bangalore website (opens in new tab)"><Image src={IIITBIMG} alt="Zenodo Screenshot" width={60} format="webp" loading="eager" decoding="async" fetchpriority="high" class="h-auto object-cover" /> </a>
+        <br />
+   </section>
   </main>
 </MainLayout>
